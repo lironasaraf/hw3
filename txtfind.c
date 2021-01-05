@@ -155,38 +155,67 @@ void print_similar_words(char *str)
 
 /* Main function */
 int main()
+
 {
-	int		n;
-	char	word1[WORD];
-	char	word2[WORD];
-	
-	
 
-	n = getWord(word1);
-	if (n == 0)
-	{
-		printf("Invalid input word #1\n");
-		return 0;
-	}
+char fline [LINE];
 
-	n = getWord(word2);
-	if (n == 0)
-	{
-		printf("Invalid input word #2\n");
-		return 0;
-	}
+char word1 [WORD];
 
-	if (strcmp(word2, "a") == 0)
-	{
-		print_lines(word1);
-	}
-	else if (strcmp(word2, "b") == 0)
-	{
-		print_similar_words(word1);
-	}
-	else
-	{
-		printf("Invalid input word #2 %s\n", word2);
-	}
+char word2;
+
+int f=0;
+
+if(fgets(fline,LINE,stdin)!=NULL){
+
+    while(fline[f]!=' '){
+
+        word1[f]=fline[f];
+
+        f++;
+
+    }
+
+    word2 =fline[f+1];
+
 }
 
+
+
+	switch(word2)
+
+	{
+
+	case 'a':
+
+	
+
+		print_lines(word1);
+
+	
+
+	break;
+
+	case 'b':
+
+	
+
+		print_similar_words(word1);
+
+
+
+	break;
+
+	default:
+
+	break;
+
+	}
+
+	
+
+
+
+	return 0;
+
+}
